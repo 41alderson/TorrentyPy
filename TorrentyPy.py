@@ -244,7 +244,7 @@ if __name__ == '__main__':
 
     print('''
     \t\tAuthor:   41_alderson
-    \t\tGithub: 
+    \t\tGithub:   https://github.com/41alderson/TorrentyPy
     \t\tTelegram: @destroyer41 
     \nIf You Find Any Problem Or Want Any New Feature To Be Added To The Script
 Please Pull A New Request On Github (Or) Contact Me.''' + color.end)
