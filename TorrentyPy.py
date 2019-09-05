@@ -187,7 +187,6 @@ def main():
         print(color.yellow + '\nGetting A Fresh Movie List Please Wait..' + color.end)
         TorrentyPy.mov_list(20)
         os.system('rm .temp.json')
-        os.system('clear')
         sp(2)
         return main()
 
@@ -195,7 +194,6 @@ def main():
         query = input('\nMovie To Search: ')
         TorrentyPy.search(query=query)
         os.system('rm .temp.json')
-        os.system('clear')
         sp(2)
         return main()
 
