@@ -53,6 +53,7 @@ class TorrentyPy:
         if mov["status_message"] == "Query was successful":
             print("\nSearch Successfull.\n")
             for i in mov["data"]["movies"]:
+
                 print('**************************************')
                 print('Name          : ' + i["title_english"])
                 print('URL           : ' + i["url"])
@@ -77,8 +78,8 @@ class TorrentyPy:
                     else:
                         os.system('mkdir TorrentyPy')
                         os.system('mkdir TorrentyPy\downloads')
-
-                    os.system('cd TorrentyPy\downloads && wget --output-document ' + query + '.torrent ' + url + ' -nv')
+                    n = requests.get(url=url)
+                    open('TorrentyPy\downloads\\'+ query + '.torrent', 'wb').write(n.content)
 
                 else:
                     sp(1)
@@ -160,12 +161,12 @@ class TorrentyPy:
 
                             url = str(k["url"])
                             url = url.replace("\\", '')
-                        if os.path.exists('TorrentyPy/downloads'):
+                        if os.path.exists('TorrentyPy\downloads'):
                             pass
                         else:
-                            os.system('mkdir TorrentyPy/downloads')
-
-                    os.system('cd TorrentyPy\downloads && wget --output-document ' + line + '.torrent ' + url + ' -nv')
+                            os.system('mkdir TorrentyPy\downloads')
+                    n = requests.get(url=url)
+                    open('TorrentyPy\downloads\\'+ line + '.torrent', 'wb').write(n.content)
                 else:
                     print(line + "\t\t--Movie Not Found.\n")
 
